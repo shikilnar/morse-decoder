@@ -36,7 +36,8 @@ const MORSE_TABLE = {
     '----.':  '9',
     '-----':  '0',
 };
-const bit_table = {
+
+const BIT_TABLE = {
     '10': '.',
     '11': '-',
     '00': ''
@@ -56,8 +57,8 @@ function decode(expr) {
       if (c === '**********'){
         res = ''
       } else {
-        for(let i = 0; i < 10; i = i + 2){
-          res += bit_table[c.substr(i, 2)];
+        for(let i = 0; i < morseCharLength; i = i + 2){
+          res += BIT_TABLE[c.substr(i, 2)];
         }
       }
       
